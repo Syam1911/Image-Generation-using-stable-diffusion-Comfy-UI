@@ -20,8 +20,8 @@ Load the downloaded .safetensors model in the load checkpoints node which is an 
 
 ### 2. Prompt node
 
-**positive prompt:** (masterpiece, best quality, ultra-detailed, 8K), breathtaking mountain landscape, crystal-clear lake, vibrant green forest, golden sunlight, soft mist, perfect reflections, ultra-realistic nature photography, depth of field, stunning composition.<br>
-**negative prompt:** (low quality, blurry, pixelated, overexposed, unnatural colors, noisy background, flat lighting, text, watermark, distorted perspective)<br>
+- **positive prompt:** (masterpiece, best quality, ultra-detailed, 8K), breathtaking mountain landscape, crystal-clear lake, vibrant green forest, golden sunlight, soft mist, perfect reflections, ultra-realistic nature photography, depth of field, stunning composition.<br>
+- **negative prompt:** (low quality, blurry, pixelated, overexposed, unnatural colors, noisy background, flat lighting, text, watermark, distorted perspective)<br>
 
 ### 3. Empty Latent Image
 
@@ -30,10 +30,10 @@ This is considered to determine the result in out desired dimensions.
 ### 4. K Sampler
 
 The parameters considered for the generation of background images for content creation was shown in the below figure. The inputs for this node are:<br>
--> model<br>
--> positive prompt<br>
--> negative prompt<br>
--> latent_image<br>
+**->** model<br>
+**->** positive prompt<br>
+**->** negative prompt<br>
+**->** latent_image<br>
 {<br>
     "seed": 314981253044060,<br>
     "control_after_generate": randomize,<br>
@@ -46,7 +46,7 @@ The parameters considered for the generation of background images for content cr
 
 ### 5. VAE Decode & Preview Image
 
--- The node is used to map the values from Ksampler tries to generate the accurate image as per the prompts given. <br>
--- The preview node will be the result image ultimately.<br>
--- We can also save these images by right-click --> Save Image. <br>
--- Or Directly, add the node "Save Image" this will perform the save operation on every time the preview image generated.<br>
+- The node is used to map the values from Ksampler tries to generate the accurate image as per the prompts given. <br>
+- The preview node will be the result image ultimately.<br>
+- We can also save these images by right-click --> Save Image. <br>
+- Or Directly, add the node "Save Image" this will perform the save operation on every time the preview image generated.<br>
