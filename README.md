@@ -1,33 +1,33 @@
 # Image-Generation-using-stable-diffusion-Comfy-UI
 
-# Clone the ComfyUI repository
+## Clone the ComfyUI repository
 git clone https://github.com/comfyanonymous/ComfyUI.git
 cd ComfyUI
 
-# Install dependencies
+## Install dependencies
 pip install -r requirements.txt
 
 After the installation of ComfyUI software, open it and choose CPU or GPU to run as per your availabilty.
 In the next step, we'll see the node arrangement as default with checkpoint node as input.
 
-# Stable Diffusion v1.5 Model
+## Stable Diffusion v1.5 Model
 Download here ---> https://civitai.com/models/62437/v1-5-pruned-emaonly
 
-# Image Generation Workflow
-# 1. Input node
+## Image Generation Workflow
+### 1. Input node
 
 Load the downloaded .safetensors model in the load checkpoints node which is an input node for our workflow.
 
-# 2. Prompt node
+### 2. Prompt node
 
 **positive prompt:** (masterpiece, best quality, ultra-detailed, 8K), breathtaking mountain landscape, crystal-clear lake, vibrant green forest, golden sunlight, soft mist, perfect reflections, ultra-realistic nature photography, depth of field, stunning composition.<br>
 **negative prompt:** (low quality, blurry, pixelated, overexposed, unnatural colors, noisy background, flat lighting, text, watermark, distorted perspective)<br>
 
-# 3. Empty Latent Image
+### 3. Empty Latent Image
 
 This is considered to determine the result in out desired dimensions.
 
-# 4. K Sampler
+### 4. K Sampler
 
 The parameters considered for the generation of background images for content creation was shown in the below figure. The inputs for this node are:<br>
 -> model<br>
@@ -44,7 +44,7 @@ The parameters considered for the generation of background images for content cr
     "denoise": 1.00<br>
 }<br>
 
-# 5. VAE Decode & Preview Image
+### 5. VAE Decode & Preview Image
 
 -- The node is used to map the values from Ksampler tries to generate the accurate image as per the prompts given. <br>
 -- The preview node will be the result image ultimately.<br>
